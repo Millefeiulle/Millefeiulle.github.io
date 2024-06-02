@@ -2086,6 +2086,13 @@ button:focus {
  .active:after {
   content: "\f077";
  }
+ .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
  .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
