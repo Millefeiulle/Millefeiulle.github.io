@@ -2054,17 +2054,27 @@ button:focus {
   transition: all 500ms ease;
   transform: scale(1, 1);
 }
- .card-body {
-  background: #fff;
-  color: #000;
-  border: none;
+.accordion-section .accordion-holder {
   margin-top: 60px;
+}
+.accordion-section .accordion-holder .card {
   box-shadow: none;
   border-radius: 0;
   margin-bottom: 10px;
-  border-bottom: 1px solid #12ac8e;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.accordion-section .accordion-holder .card .card-header {
+  background: #fff;
+  padding: 0;
+  border-radius: 0;
+}
+.accordion-section .accordion-holder .card .card-header .card-title {
   margin-bottom: 0;
+}
+.accordion-section .accordion-holder .card .card-header h4 {
   position: relative;
+}
+.accordion-section .accordion-holder .card .card-header h4 a {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 20px;
@@ -2073,25 +2083,96 @@ button:focus {
   color: #fff;
   padding: 20px 30px;
   transition: all 0.3s ease;
- }
- .active, .accordion:hover {
-  background-color: #12ac8e [collapseOne] [collapse show];
- }
- .accordion:after {
-  content:"\f078";
-  color: #12ac8e;
-  float: right;
-  margin-left: 5px;
- }
- .active:after {
+}
+.accordion-section .accordion-holder .card .card-header h4 a:before {
   content: "\f077";
- }
- .panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  position: absolute;
+  right: 20px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+}
+.accordion-section .accordion-holder .card .card-header h4 a.collapsed {
+  background: #fff;
+  color: #000;
+}
+.accordion-section .accordion-holder .card .card-header h4 a.collapsed:before {
+  content: "\f078";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+}
+.accordion-section .accordion-holder .card .card-header h4 a.collapsed:hover {
+  color: #12ac8e;
+}
+.accordion-section .accordion-holder .card .card-body {
+  padding: 20px 30px;
+}
+.accordion-box {
+  margin-top: 40px;
+}
+.accordion-box .accordion {
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px #f1f1f1;
+}
+.accordion-box .accordion .accord-btn {
+  position: relative;
+  cursor: pointer;
+  padding: 20px;
+  background: #fafafa;
+  transition: all 500ms ease;
+}
+.accordion-box .accordion .accord-btn h6 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 26px;
+  transition: all 500ms ease;
+}
+.accordion-box .accordion .accord-btn::after {
+  position: absolute;
+  color: #777777;
+  content: "\f107";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  top: 20px;
+  right: 20px;
+  width: 26px;
+  text-align: center;
+  height: 26px;
+  border-radius: 25px;
+  font-family: "FontAwesome";
+  transition: all 500ms ease 0s;
+}
+.accordion-box .accordion .accord-btn.active {
+  background: #f4f4f4;
+  transition: all 500ms ease;
+}
+.accordion-box .accordion .accord-btn.active h6 {
+  font-weight: 700;
+  transition: all 500ms ease;
+}
+.accordion-box .accordion .accord-btn.active:after {
+  content: "\f106";
+  color: #012f5d;
+  transition: all 500ms ease 0s;
+}
+.accordion-box .accordion .accord-content {
+  position: relative;
+  display: none;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+.accordion-box .accordion .accord-content.collapsed {
+  display: block;
+}
+.accordion-box .accordion .accord-content p {
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #777777;
+  padding: 20px 0px;
 }
  .grid-container {
   display: grid;
@@ -2645,4 +2726,7 @@ button:focus {
 }
 .section-title h3 span{
   color: #000000;
+}
+.social-links {
+  border-radius: none;
 }
