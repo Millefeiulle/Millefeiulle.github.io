@@ -40,12 +40,42 @@ $('.items-container').slick({
     }]
 });
 
-//scroll up button//
-const btn = document.querySelector(".scroll-up-btn");
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-btn.addEventListener("click",  () => {
-    document.documentElement.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+//scroll-up button//
+$(window).on('scroll', function () {
+    //.Scroll to a Specific Div
+    if ($('#back-to-top').length) {
+        var scrollToTop = $('#back-to-top'),
+            scroll = $(window).scrollTop();
+        if (scroll >= 200) {
+            scrollToTop.fadeIn(200);
+        } else {
+            scrollToTop.fadeOut(100);
+        }
+    }
 });
+if ($('#back-to-top').length) {
+    $('#back-to-top').on('click', function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+}
